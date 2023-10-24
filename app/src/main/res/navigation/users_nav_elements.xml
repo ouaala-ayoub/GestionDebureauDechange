@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav_elements"
+    app:startDestination="@id/usersListFragment">
+
+
+    <fragment
+        android:id="@+id/usersListFragment"
+        android:name="com.example.gestiondebureaudechangededevises.ui.fragments.UsersListFragment"
+        android:label="fragment_users_list"
+        tools:layout="@layout/fragment_users_list" >
+        <action
+            android:id="@+id/action_usersListFragment_to_userPageFragment"
+            app:destination="@id/userPageFragment" />
+        <action
+            android:id="@+id/action_usersListFragment_to_userEditFragment"
+            app:destination="@id/userEditFragment" />
+        <action
+            android:id="@+id/action_usersListFragment_to_passwordChangeFragment2"
+            app:destination="@id/passwordChangeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userPageFragment"
+        android:name="com.example.gestiondebureaudechangededevises.ui.fragments.UserPageFragment"
+        android:label="fragment_user_page"
+        tools:layout="@layout/fragment_user_page" >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/userEditFragment"
+        android:name="com.example.gestiondebureaudechangededevises.ui.fragments.UserEditFragment"
+        android:label="fragment_user_edit"
+        tools:layout="@layout/fragment_user_edit" >
+        <argument
+            android:name="user"
+            app:argType="com.example.gestiondebureaudechangededevises.data.models.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordChangeFragment"
+        android:name="com.example.gestiondebureaudechangededevises.ui.fragments.PasswordChangeFragment"
+        android:label="fragment_password_change"
+        tools:layout="@layout/fragment_password_change" >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
+</navigation>

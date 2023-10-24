@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bureaux_nav_elements"
+    app:startDestination="@id/bureausListFragment">
+
+    <fragment
+        android:id="@+id/bureausListFragment"
+        android:name="com.example.gestiondebureaudechangededevises.ui.fragments.BureausListFragment"
+        android:label="fragment_bureaus_list"
+        tools:layout="@layout/fragment_bureaus_list" >
+        <action
+            android:id="@+id/action_bureausList_to_bureauPageFragment"
+            app:destination="@id/bureauPageFragment" />
+        <action
+            android:id="@+id/action_bureausListFragment_to_bureauEditFragment2"
+            app:destination="@id/bureauEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bureauPageFragment"
+        android:name="com.example.gestiondebureaudechangededevises.ui.fragments.BureauPageFragment"
+        android:label="fragment_bureau_page"
+        tools:layout="@layout/fragment_bureau_page" >
+        <argument
+            android:name="bureauId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bureauEditFragment"
+        android:name="com.example.gestiondebureaudechangededevises.ui.fragments.BureauEditFragment"
+        android:label="fragment_bureau_edit"
+        tools:layout="@layout/fragment_bureau_edit" >
+        <argument
+            android:name="bureau"
+            app:argType="com.example.gestiondebureaudechangededevises.data.models.Bureau" />
+    </fragment>
+
+</navigation>
